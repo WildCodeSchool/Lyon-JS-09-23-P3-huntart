@@ -20,14 +20,14 @@ const seed = async () => {
     // Generating Seed Data
 
     // Optional: Truncate tables (remove existing data)
-    await database.query("TRUNCATE streetArt");
+    // await database.query("TRUNCATE streetArt");
 
     // Insert fake data into the 'item' table
     for (let i = 0; i < 10; i += 1) {
       queries.push(
         database.query(
           "INSERT INTO streetArt(id, name, linkImage) VALUES (?, ?, ?)",
-          [i + 1, faker.lorem.word(), faker.image.imageUrl()]
+          [i + 1, faker.lorem.word(), faker.image.url()]
         )
       );
     }
