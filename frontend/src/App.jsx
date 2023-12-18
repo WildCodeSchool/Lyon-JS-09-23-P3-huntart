@@ -1,11 +1,16 @@
-import React from "react";
-import { Oeuvres } from "./components/Oeuvre";
+import "./components/font.css";
+import Logo from "./components/Logo";
+import "./components/logo.css";
+import NavbarMobile from "./components/NavBarMobile";
+import NavbarDesktop from "./components/navBarDesktop";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <h1>Mon application React</h1>
-      <Oeuvres />
+      <Logo />
+      <NavbarMobile />
+      <NavbarDesktop />
     </div>
   );
 }
