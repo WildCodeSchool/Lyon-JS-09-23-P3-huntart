@@ -1,23 +1,49 @@
-const express = require("express");
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 
-const router = express.Router();
+// Load environment variables from .env file
+require("dotenv").config();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
+// Import Faker library for generating fake data
+const { faker } = require("@faker-js/faker");
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./src/controllers/itemControllers");
+// Import database client
+const database = require("./database/client");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
+const seed = async () => {
+  try {
+    // Declare an array to store the query promises
+    // See why here: https://eslint.org/docs/latest/rules/no-await-in-loop
+    const queries = [];
 
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
+    /* ************************************************************************* */
 
-// Route to add a new item
-router.post("/items", itemControllers.add);
+    // Generating Seed Data
 
-/* ************************************************************************* */
+    // Optional: Truncate tables (remove existing data)
+    await database.query("truncate item");
 
-module.exports = router;
+    // Insert fake data into the 'item' table
+    for (let i = 0; i < 10; i += 1) {
+      queries.push(
+        database.query("insert into item(title) values (?)", [
+          faker.lorem.word(),
+        ])
+      );
+    }
+
+    /* ************************************************************************* */
+
+    // Wait for all the insertion queries to complete
+    await Promise.all(queries);
+
+    // Close the database connection
+    database.end();
+
+    console.info(`${database.databaseName} filled from ${__filename} 🌱`);
+  } catch (err) {
+    console.error("Error filling the database:", err.message);
+  }
+};
+
+// Run the seed function
+seed();
