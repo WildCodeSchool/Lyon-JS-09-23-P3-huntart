@@ -1,49 +1,23 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+const express = require("express");
 
-// Load environment variables from .env file
-require("dotenv").config();
+const router = express.Router();
 
-// Import Faker library for generating fake data
-const { faker } = require("@faker-js/faker");
+/* ************************************************************************* */
+// Define Your API Routes Here
+/* ************************************************************************* */
 
-// Import database client
-const database = require("./database/client");
+// Import itemControllers module for handling item-related operations
+const itemControllers = require("./src/controllers/itemControllers");
 
-const seed = async () => {
-  try {
-    // Declare an array to store the query promises
-    // See why here: https://eslint.org/docs/latest/rules/no-await-in-loop
-    const queries = [];
+// Route to get a list of items
+router.get("/items", itemControllers.browse);
 
-    /* ************************************************************************* */
+// Route to get a specific item by ID
+router.get("/items/:id", itemControllers.read);
 
-    // Generating Seed Data
+// Route to add a new item
+router.post("/items", itemControllers.add);
 
-    // Optional: Truncate tables (remove existing data)
-    await database.query("truncate item");
+/* ************************************************************************* */
 
-    // Insert fake data into the 'item' table
-    for (let i = 0; i < 10; i += 1) {
-      queries.push(
-        database.query("insert into item(title) values (?)", [
-          faker.lorem.word(),
-        ])
-      );
-    }
-
-    /* ************************************************************************* */
-
-    // Wait for all the insertion queries to complete
-    await Promise.all(queries);
-
-    // Close the database connection
-    database.end();
-
-    console.info(`${database.databaseName} filled from ${__filename} 🌱`);
-  } catch (err) {
-    console.error("Error filling the database:", err.message);
-  }
-};
-
-// Run the seed function
-seed();
+module.exports = router;
