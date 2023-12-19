@@ -8,20 +8,18 @@ const router = express.Router();
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
-const StreetArtControllers = require("./controllers/streetArtControllers");
+const streetArtControllers = require("./controllers/streetArtControllers");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
-router.get("./streetArt", StreetArtControllers.browse);
+router.get("/streetArt", streetArtControllers.browse); // Corrected path
 
 // Route to get a specific item by ID
 router.get("/items/:id", itemControllers.read);
-router.get("/streetArt/:id", StreetArtControllers.read);
+router.get("/streetArt/:id", streetArtControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);
-router.post("/streetArt", StreetArtControllers.add);
-
-/* ************************************************************************* */
+router.post("/streetArt", streetArtControllers.add);
 
 module.exports = router;
