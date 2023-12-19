@@ -6,14 +6,14 @@ function NavbarMobile() {
     <div className="navbar-mobile">
       <Link to="/page1" className="iconNavBar">
         <img
-          src="/frontend/src/assets/ico/art-white.png"
+          src="/assets/ico/art-white.png"
           alt="icône de la page de la liste des œuvres"
           className="iconNavBar"
         />
       </Link>
       <Link to="/profile" className="iconNavBar">
         <img
-          src="/frontend/src/assets/ico/profile-white.png"
+          src="/assets/ico/profile-white.png"
           alt="icône de la page profil"
           className="iconNavBar"
         />
