@@ -1,32 +1,40 @@
 /* Police pour h1 (Logo) */
 @font-face {
   font-family: "Crowtig-8MKPg";
-  src: url("/frontend//src/assets/fonts/logo/Crowtig-8MKPg.ttf")
-    format("truetype");
+  src:
+    local(""),
+    url("/frontend//src/assets/fonts/logo/Crowtig-8MKPg.ttf") format("truetype");
 }
 
 /* Police pour h2 */
 @font-face {
   font-family: "Crossbar-Rpe86";
-  src: url("/frontend/src/assets/fonts/h2/Crossbar-Rpe86.ttf")
-    format("truetype");
+  src:
+    local(""),
+    url("/frontend/src/assets/fonts/h2/Crossbar-Rpe86.ttf") format("truetype");
 }
 
 /* Police pour h3 */
 @font-face {
   font-family: "Smilen-gKW6";
-  src: url("/frontend/src/assets/fonts/h3/Smilen-gKW6.otf") format("opentype");
+  src:
+    local(""),
+    url("/frontend/src/assets/fonts/h3/Smilen-gKW6.otf") format("opentype");
 }
 
 /* Police pour h4 */
 @font-face {
   font-family: "Smilen-gKW6";
-  src: url("/frontend/src/assets/fonts/h4/Smilen-gKW6.otf") format("opentype");
+  src:
+    local(""),
+    url("/frontend/src/assets/fonts/h4/Smilen-gKW6.otf") format("opentype");
 }
 
 /* Police par défaut pour le reste */
 @font-face {
   font-family: "Roboto";
-  src: url("/frontend/src/assets/fonts/all/Roboto/Roboto-Medium.ttf")
-    format("truetype");
+  src:
+    local(""),
+    url("/frontend/src/assets/fonts/all/Roboto/Roboto-Medium.ttf")
+      format("truetype");
 }
