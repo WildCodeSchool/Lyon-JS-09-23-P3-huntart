@@ -2,10 +2,33 @@
   .navbar-desktop {
     display: none;
   }
+  main {
+    margin-top: 4rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .navbar-mobile {
     display: none;
   }
+  main {
+    margin-top: 2rem;
+  }
+}
+
+body {
+  background-color: #ffd3ba;
+}
+
+h2 {
+  font-family: "Crossbar-Rpe86";
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }

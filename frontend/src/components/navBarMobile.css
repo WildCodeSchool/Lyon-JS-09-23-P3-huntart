@@ -1,5 +1,6 @@
 .navbar-mobile {
   position: fixed;
+  z-index: 3;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -20,7 +21,9 @@
 }
 
 .navbar-mobile .iconNavBar {
-  width: 100%;
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
   height: auto;
-  max-height: 50px;
+  aspect-ratio: 1/1;
 }

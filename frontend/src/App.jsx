@@ -8,11 +8,17 @@ import StreetArtList from "./components/StreetArtList";
 
 function App() {
   return (
-    <div>
-      <Logo />
-      <StreetArtList />
-      <NavbarMobile />
-      <NavbarDesktop />
+    <div className="app-container">
+      <header>
+        <Logo />
+        <NavbarDesktop />
+      </header>
+      <main>
+        <StreetArtList />
+      </main>
+      <footer>
+        <NavbarMobile />
+      </footer>
     </div>
   );
 }
