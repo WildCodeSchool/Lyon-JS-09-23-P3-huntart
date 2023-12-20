@@ -4,7 +4,7 @@ import "./navBarDesktop.css";
 function NavbarDesktop() {
   return (
     <div className="navbar-desktop">
-      <Link to="/page1">Page 1</Link>
+      <Link to="/liste">Liste</Link>
       <Link to="/profile">Profil</Link>
     </div>
   );

@@ -15,7 +15,6 @@ function StreetArtList() {
 
   return (
     <div className="street-art-list">
-      <p>Salut</p>
       {streetArtData.map((item) => (
         <StreetArtItem
           key={item.id}
