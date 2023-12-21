@@ -23,12 +23,13 @@ const seed = async () => {
     // await database.query("TRUNCATE streetArt");
 
     // Insert fake data into the 'item' table
-    for (let i = 0; i < 10; i += 1) {
+
+    for (let i = 1; i < 13; i += 1) {
       queries.push(
-        database.query(
-          "INSERT INTO streetArt(id, name, linkImage) VALUES (?, ?, ?)",
-          [i + 1, faker.lorem.word(), faker.image.url()]
-        )
+        database.query("INSERT INTO streetArt(name, linkImage) VALUES (?, ?)", [
+          faker.lorem.word(),
+          `/assets/oeuvres/sta${i.toString()}.jpg`,
+        ])
       );
     }
 
