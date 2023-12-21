@@ -1,0 +1,17 @@
+.navbar-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.navbar-desktop a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+.navbar-desktop a:first-child {
+  margin-left: 0;
+}

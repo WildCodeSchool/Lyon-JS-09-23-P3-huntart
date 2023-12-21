@@ -1,40 +1,18 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
+import "./components/font.css";
+import Logo from "./components/Logo";
+import "./components/logo.css";
+import NavbarMobile from "./components/NavBarMobile";
+import NavbarDesktop from "./components/navBarDesktop";
 import "./App.css";
+import StreetArtList from "./components/StreetArtList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
-
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div>
+      <Logo />
+      <StreetArtList />
+      <NavbarMobile />
+      <NavbarDesktop />
     </div>
   );
 }
