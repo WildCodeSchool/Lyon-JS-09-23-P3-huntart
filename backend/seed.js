@@ -20,7 +20,7 @@ const seed = async () => {
     // Generating Seed Data
 
     // Optional: Truncate tables (remove existing data)
-    // await database.query("TRUNCATE streetArt");
+    await database.query("TRUNCATE streetArt");
 
     // Insert fake data into the 'item' table
 
