@@ -2,7 +2,7 @@
 const tables = require("../tables");
 
 // The B of BREAD - Browse (Read All) operation
-const browseStreetArt = async (req, res, next) => {
+const browse = async (req, res, next) => {
   try {
     // Fetch all items from the database
     const streetArtItems = await tables.streetArt.readAll();
@@ -59,7 +59,7 @@ const add = async (req, res, next) => {
 
 // Ready to export the controller functions
 module.exports = {
-  browseStreetArt,
+  browse,
   read,
   // edit,
   add,
