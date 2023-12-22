@@ -6,7 +6,8 @@ const seed = async () => {
   try {
     const queries = [];
 
-    await database.query("TRUNCATE streetArt");
+    await database.query("DELETE FROM streetArt_Theme");
+    await database.query("DELETE FROM streetArt");
 
     for (let i = 1; i < 13; i += 1) {
       queries.push(
@@ -17,7 +18,6 @@ const seed = async () => {
         ])
       );
     }
-
     await Promise.all(queries);
 
     database.end();
