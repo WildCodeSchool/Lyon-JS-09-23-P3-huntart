@@ -4,6 +4,7 @@ import "./components/logo.css";
 import NavbarMobile from "./components/NavBarMobile";
 import NavbarDesktop from "./components/navBarDesktop";
 import StreetArtList from "./components/StreetArtList";
+import "./App.css";
 
 function App() {
   return (

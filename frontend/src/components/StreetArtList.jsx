@@ -6,7 +6,7 @@ function StreetArtList() {
   const [streetArtData, setStreetArtData] = useState([]);
 
   useEffect(() => {
-    fetch("/json/streetArtList.json")
+    fetch("http://localhost:3310/api/streetart")
       .then((response) => response.json())
       .then((data) => setStreetArtData(data))
       .catch((error) =>
