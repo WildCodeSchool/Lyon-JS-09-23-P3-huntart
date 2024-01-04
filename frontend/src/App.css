@@ -1,0 +1,33 @@
+body {
+  background-color: #ffd3ba;
+}
+
+h2 {
+  font-family: "Crossbar-Rpe86";
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  margin-top: 2rem;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-desktop {
+    display: none;
+  }
+  main {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-mobile {
+    display: none;
+  }
+}
