@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
+import "./streetArtItem.css";
 
 function StreetArtItem({ id, name, url }) {
   return (
     <div className="street-art-item">
       <img src={url} alt={`StreetArt ${id}`} />
-      <p>{name}</p>
+      <h2>{name}</h2>
     </div>
   );
 }

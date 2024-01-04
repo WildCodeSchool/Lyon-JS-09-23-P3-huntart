@@ -15,3 +15,12 @@
 .navbar-desktop a:first-child {
   margin-left: 0;
 }
+
+.textLink {
+  font-family: "Crowtig-8MKPg";
+  src:
+    local(""),
+    url("/assets/fonts/logo/Crowtig-8MKPg.ttf") format("truetype");
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+}

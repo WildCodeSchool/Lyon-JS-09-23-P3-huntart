@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import StreetArtItem from "./StreetArtItem";
+import "./streetArtList.css";
 
 function StreetArtList() {
   const [streetArtData, setStreetArtData] = useState([]);
