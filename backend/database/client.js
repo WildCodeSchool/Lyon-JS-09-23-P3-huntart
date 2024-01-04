@@ -12,12 +12,12 @@ const client = mysql.createPool({
   database: DB_NAME,
 });
 
-// Try to get a connection to the database
+// Try to get a connection to the database (commented out)
+
 client
   .getConnection()
   .then((connection) => {
     console.info(`Using database ${DB_NAME}`);
-
     connection.release();
   })
   .catch((error) => {
