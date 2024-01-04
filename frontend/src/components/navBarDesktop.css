@@ -1,0 +1,26 @@
+.navbar-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.navbar-desktop a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+.navbar-desktop a:first-child {
+  margin-left: 0;
+}
+
+.textLink {
+  font-family: "Crowtig-8MKPg";
+  src:
+    local(""),
+    url("/assets/fonts/logo/Crowtig-8MKPg.ttf") format("truetype");
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+}

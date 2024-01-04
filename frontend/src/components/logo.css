@@ -1,0 +1,26 @@
+@import url("./font.css");
+
+h1.logo {
+  font-family: "Crowtig-8MKPg", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  h1.logo {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    margin-left: 1rem;
+  }
+}
