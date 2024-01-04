@@ -13,7 +13,7 @@ const client = mysql.createPool({
 });
 
 // Try to get a connection to the database (commented out)
-/*
+
 client
   .getConnection()
   .then((connection) => {
@@ -28,7 +28,6 @@ client
     );
     console.error("Error message:", error.message);
   });
-*/
 
 // Store database name into client for further uses
 client.databaseName = DB_NAME;
