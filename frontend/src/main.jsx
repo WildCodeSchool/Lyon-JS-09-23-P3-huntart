@@ -5,11 +5,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import Contact from "./pages/Contact";
+import StreetArtId from "./components/StreetArtId";
+import StreetArtList from "./components/StreetArtList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/list",
+    element: <StreetArtList />,
+  },
+  {
+    path: "/:id",
+    element: <StreetArtId />,
   },
   {
     path: "/contact",
