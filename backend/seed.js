@@ -1,3 +1,6 @@
+/* eslint "import/no-extraneous-dependencies": ["error", {"devDependencies": true}] */
+
+const { faker } = require("@faker-js/faker");
 require("dotenv").config();
 
 const database = require("./database/client");
@@ -9,12 +12,16 @@ const seed = async () => {
     await database.query("DELETE FROM streetArt_Theme");
     await database.query("DELETE FROM streetArt");
 
-    for (let i = 1; i < 13; i += 1) {
+    for (let i = 1; i < 10; i += 1) {
+      const name = faker.lorem.word();
+      const linkImage = `/assets/oeuvres/sta${i}.jpg`;
+      const description = faker.lorem.text();
+
       queries.push(
         database.query("INSERT INTO streetArt(name, linkImage) VALUES (?, ?)", [
-          i + 1,
-          `Street Art ${i + 1}`,
-          `/assets/oeuvres/sta${i}.jpg`,
+          name,
+          linkImage,
+          description,
         ])
       );
     }

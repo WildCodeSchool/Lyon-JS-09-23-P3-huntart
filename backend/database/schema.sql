@@ -4,7 +4,8 @@ USE `artAndGo`;
 CREATE TABLE `streetArt` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` varchar(80),
-  `linkImage` varchar(255)
+  `linkImage` varchar(255),
+  `description` TEXT
 );
  
 CREATE TABLE `theme` (
