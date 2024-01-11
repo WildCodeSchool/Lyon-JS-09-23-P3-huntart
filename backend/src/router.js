@@ -22,4 +22,7 @@ router.get("/streetArt/:id", streetArtControllers.read);
 router.post("/items", itemControllers.add);
 router.post("/streetArt", streetArtControllers.add);
 
+// Route to edit specific item by ID
+router.put("/streetArt/:id", streetArtControllers.update);
+
 module.exports = router;

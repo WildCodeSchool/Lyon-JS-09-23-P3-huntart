@@ -10,10 +10,11 @@ class StreetArtManager extends AbstractManager {
   // The C of CRUD - Create operation
 
   async create(streetArt) {
+    const { name, linkImage, description } = streetArt;
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (title) values (?)`,
-      [streetArt.title]
+      `INSERT INTO ${this.table} (name, linkImage, description) VALUES (?, ?, ?)`,
+      [name, linkImage, description]
     );
 
     // Return the ID of the newly inserted item
@@ -44,9 +45,13 @@ class StreetArtManager extends AbstractManager {
   // The U of CRUD - Update operation
   // TODO: Implement the update operation to modify an existing item
 
-  // async update(item) {
-  //   ...
-  // }
+  async update(id, streetArtUpdated) {
+    const { name, linkImage, description } = streetArtUpdated;
+    await this.database.query(
+      `UPDATE ${this.table} SET name = ?, linkImage = ?, description = ? WHERE id = ?`,
+      [name, linkImage, description, id]
+    );
+  }
 
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove an item by its ID

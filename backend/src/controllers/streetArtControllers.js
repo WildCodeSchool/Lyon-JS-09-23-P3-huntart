@@ -1,5 +1,6 @@
 // Import access to database tables
 const tables = require("../tables");
+const streetArtManager = require("../models/StreetArtManager");
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
@@ -35,16 +36,34 @@ const read = async (req, res, next) => {
 };
 
 // The E of BREAD - Edit (Update) operation
-// This operation is not yet implemented
+const update = async (req, res, next) => {
+  const { id } = req.params;
+  const streetArtUpdated = req.body;
+
+  try {
+    const existingStreetArt = await streetArtManager.read(id);
+
+    if (!existingStreetArt) {
+      return res.status(404).json({ error: "Œuvre non trouvée" });
+    }
+
+    await streetArtManager.update(id, streetArtUpdated);
+
+    res.sendStatus(200);
+  } catch (error) {
+    next(error);
+  }
+  // Solve ESLINT error : "Expected to return a value at the end of async arrow function.eslintconsistent-return function(req: any, res: any, next: any): Promise<any>"
+  return undefined;
+};
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
   // Extract the item data from the request body
-  const item = req.body;
-
+  const streetArt = req.body;
   try {
     // Insert the item into the database
-    const insertId = await tables.item.create(item);
+    const insertId = await tables.streetArt.create(streetArt);
 
     // Respond with HTTP 201 (Created) and the ID of the newly inserted item
     res.status(201).json({ insertId });
@@ -61,7 +80,7 @@ const add = async (req, res, next) => {
 module.exports = {
   browse,
   read,
-  // edit,
+  update,
   add,
   // destroy,
 };
