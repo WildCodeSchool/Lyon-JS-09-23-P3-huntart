@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 import "./streetArtItem.css";
+import { Link } from "react-router-dom";
 
 function StreetArtItem({ id, name, linkImage }) {
   return (
     <div className="street-art-item">
-      <img src={`${linkImage}`} alt={`StreetArt ${id}`} />
-      <h2>{name}</h2>
+      <Link to={`/${id}`}>
+        <img src={`${linkImage}`} alt={`StreetArt ${id}`} />
+        <h2>{name}</h2>
+      </Link>
     </div>
   );
 }
