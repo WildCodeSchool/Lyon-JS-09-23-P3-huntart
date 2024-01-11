@@ -21,7 +21,7 @@ function StreetArtList() {
           key={item.id}
           id={item.id}
           name={item.name}
-          url={item.url}
+          linkImage={item.linkImage}
         />
       ))}
     </div>
