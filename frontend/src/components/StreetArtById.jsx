@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function StreetArtId() {
+function StreetArtById() {
   const { id } = useParams();
   const [data, setData] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,4 +36,4 @@ function StreetArtId() {
   );
 }
 
-export default StreetArtId;
+export default StreetArtById;

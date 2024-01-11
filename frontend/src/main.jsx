@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import Contact from "./pages/Contact";
-import StreetArtId from "./components/StreetArtId";
+import StreetArtById from "./components/StreetArtById";
 import StreetArtList from "./components/StreetArtList";
 
 const router = createBrowserRouter([
@@ -14,12 +14,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/list",
+    path: "/streetart",
     element: <StreetArtList />,
   },
   {
-    path: "/:id",
-    element: <StreetArtId />,
+    path: "/streetart/:id",
+    element: <StreetArtById />,
   },
   {
     path: "/contact",
