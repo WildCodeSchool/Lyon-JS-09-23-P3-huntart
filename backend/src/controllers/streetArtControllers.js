@@ -23,7 +23,7 @@ const read = async (req, res, next) => {
 
     // If the item is not found, respond with HTTP 404 (Not Found)
     // Otherwise, respond with the item in JSON format
-    if (streetArt == null) {
+    if (streetArt === null) {
       res.sendStatus(404);
     } else {
       res.json(streetArt);
