@@ -18,11 +18,10 @@ const seed = async () => {
       const description = faker.lorem.text();
 
       queries.push(
-        database.query("INSERT INTO streetArt(name, linkImage) VALUES (?, ?)", [
-          name,
-          linkImage,
-          description,
-        ])
+        database.query(
+          "INSERT INTO streetArt(name, linkImage, description) VALUES (?, ?, ?)",
+          [name, linkImage, description]
+        )
       );
     }
     await Promise.all(queries);
