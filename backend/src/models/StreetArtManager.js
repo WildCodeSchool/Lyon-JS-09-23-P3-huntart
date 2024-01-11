@@ -55,10 +55,9 @@ class StreetArtManager extends AbstractManager {
 
   // The D of CRUD - Delete operation
   // TODO: Implement the delete operation to remove an item by its ID
-
-  // async delete(id) {
-  //   ...
-  // }
+  async delete(id) {
+    await this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [id]);
+  }
 }
 
 module.exports = StreetArtManager;

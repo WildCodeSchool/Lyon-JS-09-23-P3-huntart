@@ -1,6 +1,8 @@
 // Import access to database tables
 const tables = require("../tables");
-const streetArtManager = require("../models/StreetArtManager");
+// Instance unique du gestionnaire
+// précédent : const streetArtManager = require("../models/StreetArtManager");
+const streetArtManager = require("../models/StreetArtManager").getInstance();
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
@@ -75,12 +77,23 @@ const add = async (req, res, next) => {
 
 // The D of BREAD - Destroy (Delete) operation
 // This operation is not yet implemented
-
+const destroy = async (req, res, next) => {
+  const { id } = req.params;
+  // To delete image
+  const options = { deleteImage: true };
+  try {
+    await streetArtManager.delete(id, options);
+    // 204 = payload : No content : request success but there isn't data to send
+    res.sendStatus(204);
+  } catch (error) {
+    next(error);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
   read,
   update,
   add,
-  // destroy,
+  destroy,
 };
