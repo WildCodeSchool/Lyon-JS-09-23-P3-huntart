@@ -5,10 +5,10 @@ function NavbarDesktop() {
   return (
     <div className="navbar-desktop">
       <Link to="/streetart" className="textLink">
-        Liste
+        Street Arts
       </Link>
-      <Link to="/profile" className="textLink">
-        Profil
+      <Link to="/contact" className="textLink">
+        Contact
       </Link>
     </div>
   );

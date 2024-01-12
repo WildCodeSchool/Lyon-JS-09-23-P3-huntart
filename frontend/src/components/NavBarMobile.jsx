@@ -1,21 +1,29 @@
 import { Link } from "react-router-dom";
 import "./navBarMobile.css";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavbarMobile() {
   return (
     <div className="navbar-mobile">
-      <Link to="/page1" className="iconNavBar">
+      <Link to="/accueil" className="iconNavBar">
         <img
-          src="/assets/ico/art-white.png"
-          alt="icône de la page de la liste des œuvres"
-          className="iconNavBar"
+          className="ico"
+          alt="Bouton Accueil"
+          src="/assets/ico/home-5-xxl.png"
         />
       </Link>
-      <Link to="/profile" className="iconNavBar">
+      <Link to="/streetart" className="iconNavBar">
         <img
-          src="/assets/ico/profile-white.png"
-          alt="icône de la page profil"
-          className="iconNavBar"
+          className="ico"
+          alt="Bouton Liste des Street Arts"
+          src="/assets/ico/instagram-3-xxl.png"
+        />
+      </Link>
+      <Link to="/contact" className="iconNavBar">
+        <img
+          className="ico"
+          alt="Bouton contact"
+          src="/assets/ico/email-xxl.png"
         />
       </Link>
     </div>

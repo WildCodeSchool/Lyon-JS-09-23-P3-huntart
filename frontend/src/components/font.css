@@ -8,26 +8,10 @@
 
 /* Police pour h2 */
 @font-face {
-  font-family: "Crossbar-Rpe86";
+  font-family: "SilvarPro-MqDJ";
   src:
     local(""),
-    url("/assets/fonts/h2/Crossbar-Rpe86.ttf") format("truetype");
-}
-
-/* Police pour h3 */
-@font-face {
-  font-family: "Smilen-gKW6";
-  src:
-    local(""),
-    url("/assets/fonts/h3/Smilen-gKW6.otf") format("opentype");
-}
-
-/* Police pour h4 */
-@font-face {
-  font-family: "Smilen-gKW6";
-  src:
-    local(""),
-    url("/assets/fonts/h4/Smilen-gKW6.otf") format("opentype");
+    url("/assets/fonts/h2/SivarPro-MqDJ.otf") format("opentype");
 }
 
 /* Police par défaut pour le reste */
@@ -35,5 +19,5 @@
   font-family: "Roboto";
   src:
     local(""),
-    url("/assets/fonts/all/Roboto/Roboto-Medium.ttf") format("truetype");
+    url("/assets/fonts/all/Roboto-Regular.ttf") format("truetype");
 }

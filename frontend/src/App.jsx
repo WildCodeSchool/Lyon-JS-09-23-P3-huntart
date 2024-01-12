@@ -1,9 +1,10 @@
+import { Outlet } from "react-router-dom";
+
 import "./components/font.css";
 import Logo from "./components/Logo";
 import "./components/logo.css";
 import NavbarMobile from "./components/NavBarMobile";
 import NavbarDesktop from "./components/navBarDesktop";
-import StreetArtList from "./components/StreetArtList";
 import "./App.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <NavbarDesktop />
       </header>
       <main>
-        <StreetArtList />
+        <Outlet />
       </main>
       <footer>
         <NavbarMobile />

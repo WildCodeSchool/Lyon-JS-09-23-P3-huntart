@@ -1,0 +1,21 @@
+.container-streetArt {
+  display: flex;
+  flex-wrap: no-wrap;
+  gap: 2rem;
+  overflow: auto;
+}
+.container-txt-streetArt {
+  background-color: beige;
+  padding: 10px;
+  max-width: fit-content;
+}
+
+@media (max-width: 700px) {
+  .container-streetArt {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  body {
+    overflow: auto;
+  }
+}
