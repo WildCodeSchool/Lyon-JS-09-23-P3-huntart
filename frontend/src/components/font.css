@@ -3,7 +3,7 @@
   font-family: "Crowtig-8MKPg";
   src:
     local(""),
-    url("../../public//assets//fonts/logo/Crowtig-8MKPg.ttf") format("truetype");
+    url("/assets//fonts/logo/Crowtig-8MKPg.ttf") format("truetype");
 }
 
 /* Police pour h2 */
@@ -11,7 +11,7 @@
   font-family: "SilvarPro-MqDJ";
   src:
     local(""),
-    url("../../public/assets/fonts/h2/SivarPro-MqDJ.otf") format("opentype");
+    url("/assets/fonts/h2/SivarPro-MqDJ.otf") format("opentype");
 }
 
 /* Police par défaut pour le reste */
@@ -19,5 +19,5 @@
   font-family: "Roboto";
   src:
     local(""),
-    url("../../public/assets/fonts/all/Roboto-Regular.ttf") format("truetype");
+    url("/assets/fonts/all/Roboto-Regular.ttf") format("truetype");
 }
