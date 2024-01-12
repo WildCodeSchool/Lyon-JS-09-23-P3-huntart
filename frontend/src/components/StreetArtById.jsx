@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./streetArtById.css";
 
 function StreetArtById() {
   const { id } = useParams();
@@ -28,10 +29,14 @@ function StreetArtById() {
   }
 
   return (
-    <div>
-      <h2>{data.name}</h2>
-      <img src={data.linkImage} alt={`StreetArt ${id}`} />
-      <p>{data.description}</p>
+    <div className="container-streetArt">
+      <div className="container-img-streetArt div-tape1">
+        <img src={data.linkImage} alt={`StreetArt ${id}`} />
+      </div>
+      <div className="container-txt-streetArt div-tape2">
+        <h2>{data.name}</h2>
+        <p>{data.description}</p>
+      </div>
     </div>
   );
 }
