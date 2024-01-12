@@ -1,8 +1,8 @@
 // Import access to database tables
 const tables = require("../tables");
 // Instance unique du gestionnaire
-// précédent : const streetArtManager = require("../models/StreetArtManager");
-const streetArtManager = require("../models/StreetArtManager").getInstance();
+// const streetArtManager = require("../models/StreetArtManager");
+// const streetArtManager = require("../models/StreetArtManager").getInstance();
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
@@ -43,13 +43,13 @@ const update = async (req, res, next) => {
   const streetArtUpdated = req.body;
 
   try {
-    const existingStreetArt = await streetArtManager.read(id);
+    const existingStreetArt = await tables.streetArt.read(id);
 
     if (!existingStreetArt) {
       return res.status(404).json({ error: "Œuvre non trouvée" });
     }
 
-    await streetArtManager.update(id, streetArtUpdated);
+    await tables.streetArt.update(id, streetArtUpdated);
 
     res.sendStatus(200);
   } catch (error) {
@@ -82,7 +82,7 @@ const destroy = async (req, res, next) => {
   // To delete image
   const options = { deleteImage: true };
   try {
-    await streetArtManager.delete(id, options);
+    await tables.streetArt.destroy(id, options);
     // 204 = payload : No content : request success but there isn't data to send
     res.sendStatus(204);
   } catch (error) {
