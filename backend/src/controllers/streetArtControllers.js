@@ -1,6 +1,5 @@
 // Import access to database tables
 const tables = require("../tables");
-// Instance unique du gestionnaire
 // const streetArtManager = require("../models/StreetArtManager");
 // const streetArtManager = require("../models/StreetArtManager").getInstance();
 
