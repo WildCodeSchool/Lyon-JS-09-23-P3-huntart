@@ -1,57 +1,59 @@
 // Import required dependencies
 const { app, request, tables } = require("../setup");
 
-// Test suite for the GET /api/items route
-describe("GET /api/items", () => {
-  it("should fetch items successfully", async () => {
-    // Define a sample item for testing
-    const testItem = {
-      title: "Sample Item",
+// Test suite for the GET /api/streetart route
+describe("GET /api/streetart", () => {
+  it("should fetch street arts successfully", async () => {
+    // Define a sample street art for testing
+    const testStreetArt = {
+      title: "Sample Street Art",
     };
 
-    // Create a sample item in the database
-    const insertId = await tables.item.create(testItem);
+    // Create a sample street art in the database
+    const insertId = await tables.streetArt.create(testStreetArt);
 
-    // Send a GET request to the /api/items endpoint
-    const response = await request(app).get("/api/items");
+    // Send a GET request to the /api/streetart endpoint
+    const response = await request(app).get("/api/streetart");
 
     // Assertions
     expect(response.status).toBe(200);
     expect(response.body).toBeInstanceOf(Array);
 
-    // Check if the created item is present in the response
-    const foundItem = response.body.find((item) => item.id === insertId);
+    // Check if the created street art is present in the response
+    const foundStreetArt = response.body.find(
+      (streetArt) => streetArt.id === insertId
+    );
 
     // Assertions
-    expect(foundItem).toBeInstanceOf(Object);
-    expect(foundItem.title).toBe(testItem.title);
+    expect(foundStreetArt).toBeInstanceOf(Object);
+    expect(foundStreetArt.title).toBe(testStreetArt.title);
   });
 });
 
-// Test suite for the GET /api/items/:id route
-describe("GET /api/items/:id", () => {
-  it("should fetch a single item successfully", async () => {
-    // Define a sample item for testing
-    const testItem = {
-      title: "Sample Item",
+// Test suite for the GET /api/streetart/:id route
+describe("GET /api/streetart/:id", () => {
+  it("should fetch a single street art successfully", async () => {
+    // Define a sample street art for testing
+    const testStreetArt = {
+      title: "Sample Street Art",
     };
 
-    // Create a sample item in the database
-    const insertId = await tables.item.create(testItem);
+    // Create a sample street art in the database
+    const insertId = await tables.streetArt.create(testStreetArt);
 
-    // Send a GET request to the /api/items/:id endpoint
-    const response = await request(app).get(`/api/items/${insertId}`);
+    // Send a GET request to the /api/streetart/:id endpoint
+    const response = await request(app).get(`/api/streetart/${insertId}`);
 
     // Assertions
     expect(response.status).toBe(200);
     expect(response.body).toBeInstanceOf(Object);
     expect(response.body.id).toBe(insertId);
-    expect(response.body.title).toBe(testItem.title);
+    expect(response.body.title).toBe(testStreetArt.title);
   });
 
-  it("should return 404 for non-existent item", async () => {
-    // Send a GET request to the /api/items/:id endpoint with an invalid ID
-    const response = await request(app).get("/api/items/0");
+  it("should return 404 for non-existent street art", async () => {
+    // Send a GET request to the /api/streetart/:id endpoint with an invalid ID
+    const response = await request(app).get("/api/streetart/0");
 
     // Assertions
     expect(response.status).toBe(404);
@@ -59,30 +61,32 @@ describe("GET /api/items/:id", () => {
   });
 });
 
-// Test suite for the POST /api/items route
+// Test suite for the POST /api/streetart route
 // Doesn't pass: maybe something to change in app config :/
 // Hint: enabling log could help ;)
-describe("POST /api/items", () => {
-  it("should add a new item successfully", async () => {
-    // Define a sample item for testing
-    const testItem = {
-      title: "Sample Item",
+describe("POST /api/streetart", () => {
+  it("should add a new street art successfully", async () => {
+    // Define a sample street art for testing
+    const testStreetArt = {
+      title: "Sample Street Art",
     };
 
-    // Send a POST request to the /api/items endpoint with a test item
-    const response = await request(app).post("/api/items").send(testItem);
+    // Send a POST request to the /api/streetart endpoint with a test street art
+    const response = await request(app)
+      .post("/api/streetart")
+      .send(testStreetArt);
 
     // Assertions
     expect(response.status).toBe(201);
     expect(response.body).toBeInstanceOf(Object);
     expect(response.body.insertId).toEqual(expect.any(Number));
 
-    // Check if the newly added item exists in the database
-    const foundItem = await tables.item.read(response.body.insertId);
+    // Check if the newly added street art exists in the database
+    const foundStreetArt = await tables.streetArt.read(response.body.insertId);
 
     // Assertions
-    expect(foundItem).toBeDefined();
-    expect(foundItem.title).toBe(testItem.title);
+    expect(foundStreetArt).toBeDefined();
+    expect(foundStreetArt.title).toBe(testStreetArt.title);
   });
 });
 
