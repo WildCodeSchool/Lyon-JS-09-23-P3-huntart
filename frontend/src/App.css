@@ -22,9 +22,12 @@ body {
     sans-serif;
   margin: 1rem;
 }
-
+h1 {
+  letter-spacing: 0.2rem;
+}
 h2 {
   font-family: "SilvarPro-MqDJ";
+  letter-spacing: 0.2rem;
 }
 
 .app-container {
