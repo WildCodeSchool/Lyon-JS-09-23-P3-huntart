@@ -4,12 +4,9 @@
 
 // Import the manager modules responsible for handling data operations on the tables
 
-const ItemManager = require("./models/ItemManager");
-
 const StreetArtManager = require("./models/StreetArtManager");
 
 const managers = [
-  ItemManager,
   StreetArtManager,
   // Add other managers here
 ];
