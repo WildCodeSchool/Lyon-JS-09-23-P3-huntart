@@ -14,7 +14,7 @@ const seed = async () => {
 
     for (let i = 1; i < 10; i += 1) {
       const name = faker.lorem.word();
-      const linkImage = `/assets/oeuvres/sta${i}.jpg`;
+      const linkImage = `/assets/oeuvres/sta${i}.avif`;
       const description = faker.lorem.text();
 
       queries.push(
