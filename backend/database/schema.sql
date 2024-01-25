@@ -22,3 +22,17 @@ CREATE TABLE `streetArt_Theme` (
   FOREIGN KEY (`theme_id`) REFERENCES `theme` (`id`)
 );
  
+CREATE TABLE `user` (
+  `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `pseudo` varchar(80),
+  `email` varchar(255),
+  `password` varchar(255)
+);
+
+CREATE TABLE `user_streetArt` (
+  `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `user_id` INT,
+  `streetArt_id` INT,
+  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  FOREIGN KEY (`streetArt_id`) REFERENCES `streetArt` (`id`)
+);
