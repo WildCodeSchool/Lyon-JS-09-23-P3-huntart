@@ -12,7 +12,6 @@ const seed = async () => {
     await database.query("DELETE FROM user_streetArt");
     await database.query("DELETE FROM streetArt_Theme");
     await database.query("DELETE FROM streetArt");
-    await database.query("DELETE FROM theme");
     await database.query("DELETE FROM user");
 
     const users = [
