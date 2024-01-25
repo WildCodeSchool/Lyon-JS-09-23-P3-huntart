@@ -17,7 +17,7 @@ const seed = async () => {
 
     const users = [
       { pseudo: "user1", email: "toto@tata.com", password: "p4ssw0rd" },
-      { pseudo: "user2", email: "johndoe@example.com", password: "m0t2p4s5e" },
+      { pseudo: "user2", email: "jane@doe.com", password: "m0t2p4s5e" },
     ];
 
     users.forEach((user) => {
