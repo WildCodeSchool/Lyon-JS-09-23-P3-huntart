@@ -5,8 +5,8 @@ html {
   margin: 0;
 }
 body {
-  background-image: url("https://images.unsplash.com/photo-1610509895807-73e241b519dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: auto;
+  background-image: url("/assets/background/background.avif");
+  background-size: cover;
   backdrop-filter: blur(1px);
   font-family:
     system-ui,
@@ -22,9 +22,12 @@ body {
     sans-serif;
   margin: 1rem;
 }
-
+h1 {
+  letter-spacing: 0.2rem;
+}
 h2 {
   font-family: "SilvarPro-MqDJ";
+  letter-spacing: 0.2rem;
 }
 
 .app-container {
