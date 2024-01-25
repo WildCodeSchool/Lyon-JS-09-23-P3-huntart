@@ -8,8 +8,12 @@ class StreetArtManager extends AbstractManager {
   }
 
   // The C of CRUD - Create operation
-
   async create(streetArt) {
+    if (Object.keys(streetArt).length === 0) {
+      // Return an error about validation
+      throw new Error("Validation failed: Street art object is empty");
+    }
+
     const { name, linkImage, description } = streetArt;
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await this.database.query(
