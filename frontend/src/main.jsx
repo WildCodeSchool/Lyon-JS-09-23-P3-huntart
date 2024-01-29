@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import StreetArtById from "./components/StreetArtById";
 import StreetArtList from "./components/StreetArtList";
 import Home from "./pages/Home";
+import StreetArtPost from "./components/StreetArtPost";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "streetart", element: <StreetArtList /> },
       { path: "streetart/:id", element: <StreetArtById /> },
       { path: "contact", element: <Contact /> },
+      { path: "post", element: <StreetArtPost /> },
     ],
   },
 ]);
@@ -33,7 +35,7 @@ root.render(
   <React.StrictMode>
     <RouterProvider router={router}>
       <Routes>
-        <Route path="/*" element={<App />} />
+        <Route path="/" element={<App />} />
       </Routes>
     </RouterProvider>
   </React.StrictMode>
