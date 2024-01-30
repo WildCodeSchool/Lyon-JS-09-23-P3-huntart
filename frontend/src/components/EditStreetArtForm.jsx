@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,8 +8,9 @@ function EditStreetArtForm() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    title: "",
+    name: "",
     description: "",
+    linkImage: "",
   });
 
   useEffect(() => {
@@ -19,7 +20,11 @@ function EditStreetArtForm() {
           `http://localhost:3310/api/streetArt/${id}`
         );
         const result = await response.json();
-        setFormData({ title: result.title, description: result.description });
+        setFormData({
+          name: result.name,
+          description: result.description,
+          linkImage: result.linkImage,
+        });
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des données du Street Art :",
@@ -42,7 +47,11 @@ function EditStreetArtForm() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({
+            name: formData.name,
+            description: formData.description,
+            linkImage: formData.linkImage,
+          }),
         }
       );
 
@@ -76,12 +85,12 @@ function EditStreetArtForm() {
   return (
     <div>
       <form onSubmit={handleUpdateStreetArt}>
-        <label htmlFor="title">Titre :</label>
+        <label htmlFor="name">Titre :</label>
         <input
           type="text"
-          id="title"
-          name="title"
-          value={formData.title}
+          id="name"
+          name="name"
+          value={formData.name}
           onChange={handleChange}
         />
 
@@ -91,6 +100,15 @@ function EditStreetArtForm() {
           name="description"
           value={formData.description}
           onChange={handleChange}
+        />
+
+        <label htmlFor="linkImage">Image URL :</label>
+        <input
+          type="text"
+          id="linkImage"
+          name="linkImage"
+          value={formData.linkImage}
+          readOnly
         />
 
         <button type="submit">Mettre à jour le Street Art</button>

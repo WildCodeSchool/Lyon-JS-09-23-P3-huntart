@@ -1,4 +1,6 @@
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./components/font.css";
 import Logo from "./components/Logo";
@@ -9,18 +11,21 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="app-container">
-      <header>
-        <Logo />
-        <NavbarDesktop />
-      </header>
-      <main>
-        <Outlet />
-      </main>
-      <footer>
-        <NavbarMobile />
-      </footer>
-    </div>
+    <>
+      <div className="app-container">
+        <header>
+          <Logo />
+          <NavbarDesktop />
+        </header>
+        <main>
+          <Outlet />
+        </main>
+        <footer>
+          <NavbarMobile />
+        </footer>
+      </div>
+      <ToastContainer />
+    </>
   );
 }
 
