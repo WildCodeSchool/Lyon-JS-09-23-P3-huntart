@@ -14,10 +14,10 @@ function LoginForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Faire la logique pour la connexion
+    // TODO: add logic to connect
 
     try {
-      // Faux truc en attendant la logique
+      // TODO: add promise to view the response
       await new Promise((resolve) => {
         setTimeout(resolve, 1000);
       });
