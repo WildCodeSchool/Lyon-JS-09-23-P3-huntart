@@ -8,13 +8,12 @@ function StreetArtById() {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const navigate = useNavigate();
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3310/api/streetArt/${id}`
-        );
+        const response = await fetch(`${backendUrl}/api/streetArt/${id}`);
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -30,12 +29,9 @@ function StreetArtById() {
 
   const handleDeleteStreetArt = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:3310/api/streetArt/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`${backendUrl}/api/streetArt/${id}`, {
+        method: "DELETE",
+      });
 
       if (response.ok) {
         toast.success("Street art supprimé avec succès");

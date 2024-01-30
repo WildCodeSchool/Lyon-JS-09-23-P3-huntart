@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 function EditStreetArtForm() {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -16,9 +16,7 @@ function EditStreetArtForm() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:3310/api/streetArt/${id}`
-        );
+        const response = await fetch(`${backendUrl}/api/streetArt/${id}`);
         const result = await response.json();
         setFormData({
           name: result.name,
@@ -40,20 +38,17 @@ function EditStreetArtForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        `http://localhost:3310/api/streetArt/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            description: formData.description,
-            linkImage: formData.linkImage,
-          }),
-        }
-      );
+      const response = await fetch(`${backendUrl}/api/streetArt/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          description: formData.description,
+          linkImage: formData.linkImage,
+        }),
+      });
 
       if (response.ok) {
         toast.success("Street art mis à jour avec succès");

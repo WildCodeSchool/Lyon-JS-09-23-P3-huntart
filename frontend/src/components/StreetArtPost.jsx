@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function StreetArtPost() {
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -16,20 +21,26 @@ function StreetArtPost() {
       formDataObject.append("description", formData.description);
       formDataObject.append("photo", formData.photo);
 
-      const response = await fetch("http://127.0.0.1:3310/api/streetart", {
+      const response = await fetch(`${backendUrl}/api/streetart`, {
         method: "POST",
         body: formDataObject,
       });
 
-      console.info("Réponse du serveur :", response);
-
-      setFormData({
-        name: "",
-        description: "",
-        photo: null,
-      });
+      if (response.ok) {
+        toast.success("Street art posté avec succès");
+        setFormData({
+          name: "",
+          description: "",
+          photo: null,
+        });
+        navigate("/streetart");
+      } else {
+        // Erreur
+        toast.error("Erreur lors du post du street art");
+      }
     } catch (error) {
       console.error("Erreur lors de l'envoi de la demande :", error);
+      toast.error("Erreur lors du post du street art");
     }
   };
 
@@ -48,8 +59,6 @@ function StreetArtPost() {
       photo: file,
     });
   };
-
-  console.info(formData);
 
   return (
     <div>
