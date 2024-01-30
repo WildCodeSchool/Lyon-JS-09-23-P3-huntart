@@ -1,0 +1,14 @@
+.login-form-container {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: blanchedalmond;
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.btn-login {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
