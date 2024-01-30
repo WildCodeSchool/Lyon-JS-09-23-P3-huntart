@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./streetArtById.css";
@@ -73,6 +73,11 @@ function StreetArtById() {
           className="btn btn-danger"
         >
           Supprimer le Street Art
+        </button>
+        <button type="button" className="edit-button">
+          <Link to={`/streetart/${id}/edit`} className="edit-link">
+            Modifier le Street Art
+          </Link>
         </button>
         <h2>{data.name}</h2>
         <p>{data.description}</p>
