@@ -10,6 +10,7 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 const streetArtControllers = require("./controllers/streetArtControllers");
 const userControllers = require("./controllers/userControllers");
+const uploadImage = require("./services/imageUpload");
 
 // Route to get a list of items
 router.get("/items", itemControllers.browse);
@@ -23,8 +24,8 @@ router.get("/user/:id", userControllers.read);
 
 // Route to add a new item
 router.post("/items", itemControllers.add);
-router.post("/streetArt", streetArtControllers.add);
 router.post("/user", userControllers.add);
+router.post("/streetArt", uploadImage, streetArtControllers.add);
 
 // Route to edit specific item by ID
 router.put("/streetArt/:id", streetArtControllers.update);
