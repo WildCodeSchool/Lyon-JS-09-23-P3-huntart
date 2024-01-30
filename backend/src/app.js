@@ -25,13 +25,12 @@ const app = express();
 
 const cors = require("cors");
 
-app.use(cors());
+// app.use(cors());
 
 app.use(
   cors({
     origin: [
-      process.env.FRONTEND_URL, // keep this one, after checking the value in `backend/.env`
-      "http://localhost",
+      "http://localhost:3000", // keep this one, after checking the value in `backend/.env`
     ],
   })
 );
@@ -83,9 +82,6 @@ app.use(express.json());
 
 // Import the API routes from the router module
 const router = require("./router");
-
-// Mount the API routes under the "/api" endpoint
-app.use("/api", router);
 
 /* ************************************************************************* */
 
@@ -139,5 +135,8 @@ app.use(logErrors);
 */
 
 /* ************************************************************************* */
+
+// Mount the API routes under the "/api" endpoint
+app.use("/api", router);
 
 module.exports = app;
