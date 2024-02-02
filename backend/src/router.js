@@ -20,11 +20,7 @@ router.get("/streetArt/:id", streetArtControllers.read);
 router.get("/user/:id", userControllers.read);
 
 // Route to add a new item
-<<<<<<< HEAD
-router.post("/items", itemControllers.add);
-=======
 router.post("/streetArt", streetArtControllers.add);
->>>>>>> d4f8d7d (fix PR)
 router.post("/user", userControllers.add);
 router.post("/streetArt", uploadImage, streetArtControllers.add);
 
