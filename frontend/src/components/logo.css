@@ -3,8 +3,7 @@
 h1.logo {
   font-family: "Crowtig-8MKPg", sans-serif;
   font-size: 3rem;
-  position: fixed;
-  top: 0;
+  color: white;
 }
 
 @media screen and (max-width: 767px) {
@@ -13,13 +12,5 @@ h1.logo {
     transform: translateX(-50%);
     text-align: center;
     width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  h1.logo {
-    left: 0;
-    text-align: left;
-    margin-left: 1rem;
   }
 }
