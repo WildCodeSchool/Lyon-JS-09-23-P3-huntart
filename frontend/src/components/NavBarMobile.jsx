@@ -1,30 +1,33 @@
 import { Link } from "react-router-dom";
 import "./navBarMobile.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HomeSvg from "./svg/HomeSvg";
+import OeuvreIcoSvg from "./svg/OeuvreIcoSvg";
+import MessageIcoSvg from "./svg/MessageIcoSvg";
+import SendIcoSvg from "./svg/SendIcoSvg";
+import UserIcoSvg from "./svg/UserIcoSvg";
 
 function NavbarMobile() {
   return (
     <div className="navbar-mobile">
       <Link to="/accueil" className="iconNavBar">
-        <img
-          className="ico"
-          alt="Bouton Accueil"
-          src="/assets/ico/home-5-xxl.png"
-        />
+        <HomeSvg />
+        <span>Accueil</span>
       </Link>
       <Link to="/streetart" className="iconNavBar">
-        <img
-          className="ico"
-          alt="Bouton Liste des Street Arts"
-          src="/assets/ico/instagram-3-xxl.png"
-        />
+        <OeuvreIcoSvg />
+        <span>Oeuvres</span>
+      </Link>
+      <Link to="/post" className="iconNavBar">
+        <SendIcoSvg />
+        <span>Poster</span>
       </Link>
       <Link to="/contact" className="iconNavBar">
-        <img
-          className="ico"
-          alt="Bouton contact"
-          src="/assets/ico/email-xxl.png"
-        />
+        <MessageIcoSvg />
+        <span>contact</span>
+      </Link>
+      <Link to="/access" className="iconNavBar">
+        <UserIcoSvg />
+        <span>Compte</span>
       </Link>
     </div>
   );
