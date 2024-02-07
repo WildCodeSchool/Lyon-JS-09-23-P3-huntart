@@ -13,6 +13,8 @@ import Contact from "./pages/Contact";
 import StreetArtById from "./components/StreetArtById";
 import StreetArtList from "./components/StreetArtList";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,8 @@ const router = createBrowserRouter([
       { path: "streetart", element: <StreetArtList /> },
       { path: "streetart/:id", element: <StreetArtById /> },
       { path: "contact", element: <Contact /> },
+      { path: "login", element: <Login /> },
+      { path: "access", element: <Signup /> },
     ],
   },
 ]);
