@@ -62,6 +62,8 @@ const update = async (req, res, next) => {
 const add = async (req, res, next) => {
   // Extract the item data from the request body
   const streetArt = req.body;
+  // Generate the linkImage path
+  streetArt.linkImage = `/assets/oeuvres/${req.file.filename}`;
   try {
     // Insert the item into the database
     const insertId = await tables.streetArt.create(streetArt);

@@ -6,11 +6,11 @@ const app = express();
 
 const cors = require("cors");
 
-app.use(cors());
+// app.use(cors());
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, "http://localhost"],
+    origin: [process.env.FRONTEND_URL, "http://localhost:3000"],
   })
 );
 
@@ -61,9 +61,6 @@ app.use(express.json());
 
 // Import the API routes from the router module
 const router = require("./router");
-
-// Mount the API routes under the "/api" endpoint
-app.use("/api", router);
 
 /* ************************************************************************* */
 
@@ -117,5 +114,8 @@ app.use(logErrors);
 */
 
 /* ************************************************************************* */
+
+// Mount the API routes under the "/api" endpoint
+app.use("/api", router);
 
 module.exports = app;

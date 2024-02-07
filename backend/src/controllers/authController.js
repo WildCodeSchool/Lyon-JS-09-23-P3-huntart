@@ -11,6 +11,8 @@ const login = async (req, res, next) => {
       res.sendStatus(422);
       return;
     }
+
+    console.log(user.password, req.body.password);
     const verified = await argon2.verify(user.password, req.body.password);
     if (verified) {
       // Respond with the user and a signed token in JSON format (but without the hashed password)

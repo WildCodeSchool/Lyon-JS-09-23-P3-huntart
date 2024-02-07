@@ -25,7 +25,7 @@ CREATE TABLE `streetArt_Theme` (
 CREATE TABLE `user` (
   `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(80),
-  `email` varchar(80),
+  `email` varchar(255),
   `password` varchar(255)
 );
 

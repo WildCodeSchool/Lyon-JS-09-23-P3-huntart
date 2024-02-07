@@ -5,9 +5,11 @@
 // Import the manager modules responsible for handling data operations on the tables
 
 const StreetArtManager = require("./models/StreetArtManager");
+const userManager = require("./models/userManager");
 
 const managers = [
   StreetArtManager,
+  userManager,
   // Add other managers here
 ];
 

@@ -2,7 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 fileList=$(git diff --staged --name-only :^package-lock.json :^README.md :^frontend :^backend)
-
 echo '----- Checking Root...'
 
 if [ ! -z "$fileList" ]
