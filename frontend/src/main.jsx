@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import App from "./App";
+import { AuthContextProvider } from "./components/Context/userContext";
 import Contact from "./pages/Contact";
 import StreetArtById from "./components/StreetArtById";
 import StreetArtList from "./components/StreetArtList";
@@ -35,10 +36,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <Routes>
-        <Route path="/*" element={<App />} />
-      </Routes>
-    </RouterProvider>
+    <AuthContextProvider>
+      <RouterProvider router={router}>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </RouterProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./signup.css";
-import UseAuthContext from "../components/Context/userContext";
+import UseAuthContext from "../hook/useContext";
 
 function Login() {
   const [loginData, setLoginData] = useState({
