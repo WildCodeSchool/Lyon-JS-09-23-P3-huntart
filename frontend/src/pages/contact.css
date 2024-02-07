@@ -22,7 +22,7 @@ body {
 
   box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
   position: relative;
-  background-image: url(https://img.freepik.com/free-photo/grunge-sand-surface-rough-background-textured_1368-6117.jpg?w=1380&t=st=1707209651~exp=1707210251~hmac=6fc1484382249cddf7cbb2ee226117905b5676a2870b963db4944f6cbdf9b560);
+  background-image: url(assets/background/background.avif);
   background-size: cover;
 }
 .card::before {
