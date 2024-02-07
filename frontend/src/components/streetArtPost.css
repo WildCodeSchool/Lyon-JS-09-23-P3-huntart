@@ -40,3 +40,12 @@
 .inputGroup :is(input:focus, input:valid) {
   border-color: rgb(150, 150, 200);
 }
+#description {
+  border: solid;
+  border-color: #ddd;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  height: 3rem;
+}

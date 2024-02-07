@@ -36,7 +36,7 @@ function Signup() {
   };
   return (
     <form className="login" onSubmit={handleClick}>
-      <h3 className="signup">Signup</h3>
+      <h2 className="signup">Créer un compte</h2>
       <input
         type="pseudo"
         name="pseudo"
@@ -54,9 +54,11 @@ function Signup() {
         type="password"
         name="password"
         onChange={handleChange}
-        placeholder="Password"
+        placeholder="mot de passe"
       />
-      <button type="submit">Signup</button>
+      <button id="button-home-connect" className="comic-button" type="submit">
+        S'enregister
+      </button>
     </form>
   );
 }

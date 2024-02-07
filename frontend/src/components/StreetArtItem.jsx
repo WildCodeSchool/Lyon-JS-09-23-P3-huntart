@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function StreetArtItem({ id, name, linkImage }) {
   return (
-    <div className="street-art-item">
+    <div className="limgPolaroid">
       <Link to={`/streetart/${id}`}>
         <img src={`${linkImage}`} alt={`StreetArt ${id}`} />
         <h2>{name}</h2>

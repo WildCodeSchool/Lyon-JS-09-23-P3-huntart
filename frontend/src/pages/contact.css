@@ -22,7 +22,7 @@ body {
 
   box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
   position: relative;
-  background-image: url(assets/background/background.avif);
+  background-image: url(assets/background/paperfolded.avif);
   background-size: cover;
 }
 .card::before {
@@ -63,7 +63,7 @@ body {
 .card .row .form-group textarea {
   position: absolute;
   width: 90%;
-  height: 100%;
+  height: 3rem;
   background: transparent;
   outline: none;
   font-size: 24px;
@@ -75,7 +75,7 @@ body {
 }
 
 .card .row .form-group label {
-  line-height: 40px;
+  line-height: 3rem;
   color: black;
   font-size: 24px;
   margin: 0 0 0 30px;
@@ -103,7 +103,7 @@ body {
   outline: none;
   background: transparent;
   text-transform: uppercase;
-  color: #ffffff;
+  color: black;
   line-height: 40px;
   font-size: 20px;
   font-weight: 700;

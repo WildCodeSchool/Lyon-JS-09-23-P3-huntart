@@ -65,7 +65,11 @@ function StreetArtPost() {
 
   return (
     <div className="cardPostForm">
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form
+        className="login"
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+      >
         <label htmlFor="photo">Image:</label>
         <input
           type="file"
@@ -84,6 +88,7 @@ function StreetArtPost() {
         />
 
         <label htmlFor="description">Description:</label>
+        <br />
         <textarea
           id="description"
           name="description"
@@ -91,7 +96,12 @@ function StreetArtPost() {
           onChange={handleChange}
         />
 
-        <input type="submit" value="Poster" />
+        <input
+          id="button-home-connect"
+          className="comic-button"
+          type="submit"
+          value="Poster"
+        />
       </form>
     </div>
   );

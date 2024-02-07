@@ -42,7 +42,7 @@ function Login() {
   };
   return (
     <form className="login" onSubmit={handleClick}>
-      <h3 className="loging">Login</h3>
+      <h3 className="loging">Se connecter</h3>
 
       <input
         type="email"
@@ -58,7 +58,9 @@ function Login() {
         placeholder="Password"
       />
 
-      <button type="submit">Login</button>
+      <button id="button-home-connect" className="comic-button" type="submit">
+        Connexion
+      </button>
     </form>
   );
 }
