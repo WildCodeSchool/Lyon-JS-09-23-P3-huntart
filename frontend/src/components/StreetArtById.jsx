@@ -63,20 +63,28 @@ function StreetArtById() {
         <img src={data.linkImage} alt={`StreetArt ${id}`} />
       </div>{" "}
       <div className="container-txt-streetArt div-tape2">
-        <button
-          type="button"
-          onClick={handleDeleteStreetArt}
-          className="btn btn-danger"
-        >
-          Supprimer le Street Art
-        </button>
-        <button type="button" className="edit-button">
-          <Link to={`/streetart/${id}/edit`} className="edit-link">
-            Modifier le Street Art
-          </Link>
-        </button>
         <h2>{data.name}</h2>
+        <br />
         <p>{data.description}</p>
+        <div className="containerButtonCRUD">
+          <button
+            type="button"
+            id="buttonBackBlack"
+            onClick={handleDeleteStreetArt}
+            className="comic-button"
+          >
+            Supprimer le Street Art
+          </button>
+          <button type="button" className="">
+            <Link
+              to={`/streetart/${id}/edit`}
+              id="buttonBackBlack"
+              className="comic-button"
+            >
+              Modifier le Street Art
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );
