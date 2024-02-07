@@ -3,7 +3,6 @@
   justify-content: space-around;
   align-items: center;
   background-color: #333333;
-  position: absolute;
   top: 0;
   width: 100%;
   padding: 1rem;
@@ -30,7 +29,7 @@
 .comic-button {
   display: inline-block;
   padding: 10px 20px;
-  font-size: 24px;
+  font-size: 2vh;
   font-weight: bold;
   text-align: center;
   text-decoration: none;

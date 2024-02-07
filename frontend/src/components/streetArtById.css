@@ -1,13 +1,33 @@
 .container-streetArt {
   display: flex;
-  flex-wrap: no-wrap;
+  flex-wrap: wrap;
   gap: 2rem;
   overflow: auto;
 }
 .container-txt-streetArt {
   background-color: beige;
   padding: 10px;
-  max-width: fit-content;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.container-img-streetArt {
+  padding: 10px;
+  max-width: 70%;
+  margin: auto;
+}
+.containerButtonCRUD {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem;
+}
+#buttonBackBlack {
+  box-shadow: 5px 5px 0px #333333;
+}
+.container-txt-streetArt div-tape2 {
+  max-height: 50vh;
+  max-width: 100%;
 }
 
 @media (max-width: 700px) {
