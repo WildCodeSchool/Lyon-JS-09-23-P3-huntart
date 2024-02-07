@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import "./streetArtPost.css";
 
 function StreetArtPost() {
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -61,7 +62,7 @@ function StreetArtPost() {
   };
 
   return (
-    <div>
+    <div className="cardPostForm">
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="photo">Image:</label>
         <input

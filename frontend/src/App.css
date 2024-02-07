@@ -59,6 +59,8 @@ img {
   justify-content: center;
   background-color: beige;
   padding: 10px;
-  height: 80vh;
-  width: auto;
+  max-height: 80vh;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  margin: auto;
 }
