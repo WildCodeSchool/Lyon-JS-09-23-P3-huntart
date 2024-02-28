@@ -1,6 +1,21 @@
-.imgSoon {
-  width: 300px;
+.imgHome {
+  width: 50dvh;
   height: auto;
   align-items: center;
   justify-content: center;
+  padding-bottom: 7dvh;
+}
+.container-home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.container-button-home {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#button-home-connect {
+  margin-right: 1rem;
+  box-shadow: 5px 5px 0px #333333;
 }

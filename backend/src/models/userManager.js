@@ -25,6 +25,27 @@ class UserManager extends AbstractManager {
     return result.insertId;
   }
 
+  // Verify login
+  async readByEmailWithPassword(email) {
+    // Execute the SQL SELECT query to retrieve a specific user by its email
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where email = ?`,
+      [email]
+    );
+    // Return the first row of the result, which represents the user
+    return rows[0];
+  }
+
+  // Verify email
+  async readByEmail(email) {
+    // Execute the SQL SELECT query to retrieve a specific user by its email
+    const [rows] = await this.database.query(
+      `select email from ${this.table} where email = ?`,
+      [email]
+    );
+    // Return the first row of the result, which represents the user
+    return rows[0];
+  }
   // The Rs of CRUD - Read operations
 
   async read(id) {

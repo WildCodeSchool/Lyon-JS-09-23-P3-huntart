@@ -1,5 +1,111 @@
-.street-art-list {
+/* .street-art-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 20px;
+} */
+
+.limgPolaroid {
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  border: solid 12px #fff;
+  background: #fff;
+  box-shadow: 0 0 15px 0px #555;
+  transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  top: 50px;
+}
+
+.limgPolaroid:hover {
+  top: 0px;
+  opacity: 0.5;
+}
+
+.limgPolaroid:nth-child(1) {
+  transform: rotate(10deg);
+}
+
+.limgPolaroid:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.limgPolaroid:nth-child(3) {
+  transform: rotate(-10deg);
+}
+
+.limgPolaroid:nth-child(4) {
+  transform: rotate(20deg);
+}
+
+p {
+  margin: -15px 0 0 0;
+}
+
+.light {
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 700px;
+  height: 700px;
+  background: #fff;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.limgPolaroid:nth-child(5) {
+  transform: rotate(10deg);
+}
+
+.limgPolaroid:nth-child(6) {
+  transform: rotate(0deg);
+}
+
+.limgPolaroid:nth-child(7) {
+  transform: rotate(-10deg);
+}
+
+.limg:nth-child(8) {
+  transform: rotate(20deg);
+}
+
+.limgPolaroid:nth-child(9) {
+  transform: rotate(10deg);
+}
+
+.limgPolaroid:nth-child(10) {
+  transform: rotate(0deg);
+}
+
+.limgPolaroid:nth-child(11) {
+  transform: rotate(-10deg);
+}
+
+.limgPolaroid:nth-child(12) {
+  transform: rotate(20deg);
+}
+.limg:nth-child(8) {
+  transform: rotate(20deg);
+}
+
+.limgPolaroid:nth-child(13) {
+  transform: rotate(10deg);
+}
+
+.limgPolaroid:nth-child(14) {
+  transform: rotate(0deg);
+}
+
+.limgPolaroid:nth-child(15) {
+  transform: rotate(-10deg);
+}
+
+.limgPolaroid:nth-child(16) {
+  transform: rotate(20deg);
+}
+.limgPolaroid img {
+  width: 35vh;
 }

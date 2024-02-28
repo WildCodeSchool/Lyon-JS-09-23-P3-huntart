@@ -9,12 +9,15 @@ import {
 } from "react-router-dom";
 
 import App from "./App";
+import { AuthContextProvider } from "./components/Context/userContext";
 import Contact from "./pages/Contact";
 import StreetArtById from "./components/StreetArtById";
 import StreetArtList from "./components/StreetArtList";
 import Home from "./pages/Home";
 import StreetArtPost from "./components/StreetArtPost";
 import EditStreetArtForm from "./components/EditStreetArtForm";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,8 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "post", element: <StreetArtPost /> },
       { path: "streetart/:id/edit", element: <EditStreetArtForm /> },
+      { path: "login", element: <Login /> },
+      { path: "access", element: <Signup /> },
     ],
   },
 ]);
@@ -35,10 +40,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
-    </RouterProvider>
+    <AuthContextProvider>
+      <RouterProvider router={router}>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </RouterProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

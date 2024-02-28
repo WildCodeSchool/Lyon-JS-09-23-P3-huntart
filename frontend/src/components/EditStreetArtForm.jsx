@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -79,7 +79,7 @@ function EditStreetArtForm() {
 
   return (
     <div>
-      <form onSubmit={handleUpdateStreetArt}>
+      <form className="signup" onSubmit={handleUpdateStreetArt}>
         <label htmlFor="name">Titre :</label>
         <input
           type="text"
@@ -106,7 +106,9 @@ function EditStreetArtForm() {
           readOnly
         />
 
-        <button type="submit">Mettre à jour le Street Art</button>
+        <button id="button-home-connect" className="comic-button" type="submit">
+          Mettre à jour le Street Art
+        </button>
       </form>
     </div>
   );
