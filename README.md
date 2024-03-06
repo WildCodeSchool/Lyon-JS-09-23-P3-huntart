@@ -23,11 +23,11 @@ Vous pouvez copier le `.env.sample` pour démarrer (**don't** ne pas les supprim
 ## FAQ
 ### Fonctions incluses
 - Deux BREADS : user (seulement en back, utilisable avec postman) et streetArt (fonctionnel dans le front et le back)
+- L'authentification avec jwt et cookie
+- Refaire tout le css du projet précédent pour changer le look et corriger le côté responsive
 
 ### Fonctions pas encore incluses
-- L'authentification avec jwt et cookie
 - L'envoie d'email depuis les formulaires
-- Refaire tout le css du projet précédent pour changer le look et corriger le côté responsive
 - Changer de dossier pour les assets en lisant '''[static assets](https://vitejs.dev/guide/assets)''' 
 
 ### Langages utilisés
@@ -42,3 +42,6 @@ Pour le moment les ressources sont en local dans '''/frontend/public/assets'''
 
 ### Remerciement
 Merci pour vos avis et votre aide ainsi que les apports de Matthieu et Marco qui ont donné accès à une nouvelle vie.
+
+### Contact
+Vous pouvez me contacter sur GitHub pour toute question, suggestion d'amélioration ou contribution au projet. N'hésitez pas à ouvrir des Pull Requests ou à signaler des problèmes sur la page du projet.
