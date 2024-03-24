@@ -2,7 +2,7 @@
 ![Logo](https://i.postimg.cc/9Q6xPqDL/huntartlogo.png)
 
 [🇫🇷 Version française](#hunt-art-fr)
-[🇬🇧 English Version](#hunt-art-en)
+<!-- [🇬🇧 English Version](#hunt-art-en) -->
 
 ## Hunt Art FR
 
@@ -30,10 +30,10 @@ Ce site a pour objectif de partager des œuvres d'art urbain partout où vous le
 ## Captures d'écran
 
 Version desktop
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://i.postimg.cc/Z5xNRL7S/Capture-d-cran-du-2024-03-10-22-25-36.png))
 
-Version mobile
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<!-- Version mobile
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) -->
 
 ## Références de l'API
 
