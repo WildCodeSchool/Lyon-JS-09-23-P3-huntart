@@ -171,7 +171,7 @@ Merci pour vos avis et votre aide ainsi que les apports de Matthieu et Marco qui
 
 Si vous avez des retours, n'hésitez pas à nous contacter sur GitHub à l'adresse [techmefr](https://github.com/techmefr).
 
-## Authors
+## Développeur
 
 - [@techmefr](https://www.github.com/techmefr)
 
