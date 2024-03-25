@@ -5,7 +5,6 @@ const tables = require("../tables");
 
 const login = async (req, res, next) => {
   try {
-    // Fetch a specific user from the database based on the provided email
     const user = await tables.user.readByEmailWithPassword(req.body.email);
     if (user === undefined) {
       res.sendStatus(422);
@@ -14,13 +13,12 @@ const login = async (req, res, next) => {
 
     const verified = await argon2.verify(user.password, req.body.password);
     if (verified) {
-      // Respond with the user and a signed token in JSON format (but without the hashed password)
       delete user.password;
       const token = await jwt.sign(
         { sub: user.id, email: user.email },
         process.env.APP_SECRET,
         {
-          expiresIn: "3d",
+          expiresIn: "1h",
         }
       );
       res
@@ -38,7 +36,6 @@ const login = async (req, res, next) => {
       res.sendStatus(422);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };

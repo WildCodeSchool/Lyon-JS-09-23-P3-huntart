@@ -34,8 +34,8 @@ router.post("/streetArt", uploadImage, streetArtControllers.add);
 router.post("/login", logauth.login);
 
 // Route to edit specific item by ID
-// router.put("/streetArt/:id", auth.verifyToken, streetArtControllers.update);
-router.put("/streetArt/:id", streetArtControllers.update);
+router.put("/streetArt/:id", auth.verifyToken, streetArtControllers.update);
+// router.put("/streetArt/:id", streetArtControllers.update);
 
 router.put("/user/:id", userControllers.update);
 

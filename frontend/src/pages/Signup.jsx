@@ -11,7 +11,6 @@ function Signup() {
   });
   const Navigate = useNavigate();
 
-  // Gérer le changement pour distribuer les données dans les input
   const handleChange = (e) => {
     setAddNewUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };

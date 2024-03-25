@@ -11,7 +11,6 @@ function Login() {
   });
   const { dispatch } = UseAuthContext();
   const Navigate = useNavigate();
-  // Gérer le changement pour distribuer les données dans les input
   const handleChange = (e) => {
     setLoginData((prev) => ({
       ...prev,
@@ -22,7 +21,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3310/api/login",
+        `${import.meta.env.VITE_BACKEND_URL}/login`,
         JSON.stringify(loginData),
         {
           headers: {
@@ -31,9 +30,7 @@ function Login() {
         }
       );
       const userData = response.data;
-      // Update the auth context with the user data
       dispatch({ type: "LOGIN", payload: userData });
-      // save in the local storage
       localStorage.setItem("user", JSON.stringify(userData));
       Navigate("/streetart");
     } catch (err) {
