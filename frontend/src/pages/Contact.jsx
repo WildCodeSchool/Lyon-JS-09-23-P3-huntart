@@ -35,7 +35,12 @@ function Contact() {
           </div>
 
           <div className="col">
-            <input type="submit" value="Envoyer" />
+            <input
+              id="button-home-connect"
+              className="comic-button"
+              type="submit"
+              value="Envoyer"
+            />
           </div>
         </div>
       </div>

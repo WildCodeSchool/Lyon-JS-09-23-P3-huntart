@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import UseAuthContext from "../hook/useContext";
 import "./streetArtPost.css";
 
 function StreetArtPost() {
@@ -12,7 +13,7 @@ function StreetArtPost() {
     description: "",
     photo: null,
   });
-
+  const { authUser } = UseAuthContext();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -25,6 +26,7 @@ function StreetArtPost() {
       const response = await fetch(`${backendUrl}/api/streetart`, {
         method: "POST",
         body: formDataObject,
+        headers: { Authorization: `Bearer ${authUser.token}` },
       });
 
       if (response.ok) {
@@ -63,7 +65,11 @@ function StreetArtPost() {
 
   return (
     <div className="cardPostForm">
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <form
+        className="login"
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+      >
         <label htmlFor="photo">Image:</label>
         <input
           type="file"
@@ -82,6 +88,7 @@ function StreetArtPost() {
         />
 
         <label htmlFor="description">Description:</label>
+        <br />
         <textarea
           id="description"
           name="description"
@@ -89,7 +96,12 @@ function StreetArtPost() {
           onChange={handleChange}
         />
 
-        <input type="submit" value="Poster" />
+        <input
+          id="button-home-connect"
+          className="comic-button"
+          type="submit"
+          value="Poster"
+        />
       </form>
     </div>
   );
